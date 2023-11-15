@@ -1,4 +1,4 @@
-const bleno = require('bleno2');
+const bleno = require('bleno');
 
 const devices = require("./devices");
 const deviceList = [devices.SHORT_DEVICES, devices.DEVICES];
@@ -26,7 +26,7 @@ const getRandomDeviceData = () => {
 
 const startAdvertising = () => {
 	const dummyAddr = fakeRandomMac();
-	const advertisementData = Buffer.from(getRandomDeviceData(DEVICES));
+	const advertisementData = Buffer.from(getRandomDeviceData());
 	console.log(advertisementData)
 	bleno.startAdvertisingWithEIRData(advertisementData, dummyAddr, (err) => {
 		err && console.log("startAdvertisingWithEIRData:", err);
