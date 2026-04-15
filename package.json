@@ -1,15 +1,27 @@
 {
   "name": "evil-apple-juice",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "lib/index.js",
+  "bin": {
+    "evil-apple-juice": "./index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node main.js"
+    "start": "node index.js",
+    "tui": "node src/tui.js",
+    "test": "node tests/test.js",
+    "dev": "node src/main.js",
+    "cli": "node index.js",
+    "examples": "node examples/examples.js"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Apple BLE Proximity Pairing Message Spoofing Tool",
   "dependencies": {
-    "bleno": "^0.5.0"
+    "@stoprocent/bleno": "^0.12.4",
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.11.0",
+    "chalk": "^4.1.2",
+    "figlet": "^1.7.0",
+    "inquirer": "^8.2.6"
   }
 }
